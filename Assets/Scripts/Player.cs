@@ -37,11 +37,13 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector3.left * speed);
             //rb.velocity += Vector2.left * speed;
             animador.SetBool("caminando",true);
+            sprender.flipX = true;
 
         } else if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector3.right * speed);
             animador.SetBool("caminando",true);
+            sprender.flipX = false;
 
         } else if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
         {
