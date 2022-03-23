@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 207647467}
   - component: {fileID: 207647466}
   - component: {fileID: 207647465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Piso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207647464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.816316, y: -4.21, z: 9.540825}
+  m_LocalPosition: {x: 8.816316, y: -4.21, z: 0}
   m_LocalScale: {x: 68.46086, y: 5.940838, z: 1}
   m_Children: []
   m_Father: {fileID: 563123141}
@@ -523,7 +523,6 @@ Transform:
   - {fileID: 1130537766}
   - {fileID: 437326884}
   - {fileID: 125635727}
-  - {fileID: 579266554}
   m_Father: {fileID: 563123141}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -559,36 +558,6 @@ Transform:
   - {fileID: 1031873537}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &579266553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 579266554}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &579266554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579266553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 550603678}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031873536
 GameObject:
@@ -790,6 +759,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpSpeed: 400
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1089882840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -800,6 +772,10 @@ PrefabInstance:
     - target: {fileID: 3067388319472511611, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_Name
       value: Plataforma_piedra (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067388319472511611, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_RootOrder
@@ -823,7 +799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.540825
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalRotation.w
@@ -953,6 +929,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma_piedra (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3067388319472511611, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -971,7 +951,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.540825
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1019,6 +999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma_piedra (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3067388319472511611, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1041,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.540825
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1089,6 +1073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma_piedra
       objectReference: {fileID: 0}
+    - target: {fileID: 3067388319472511611, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1103,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.540825
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7707228876838415263, guid: b527c8138f6d8eb46b49921d28ce6839, type: 3}
       propertyPath: m_LocalRotation.w

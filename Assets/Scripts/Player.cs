@@ -21,6 +21,11 @@ public class Player : MonoBehaviour
     // SpriteRenderer del jugador
     private SpriteRenderer sprender;
 
+    // Layer del suelo
+    [SerializeField]
+    private LayerMask capaSuelo;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +34,15 @@ public class Player : MonoBehaviour
         sprender = gameObject.GetComponent<SpriteRenderer>();
     }
 
+
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        // Raycast para detectar el suelo
+        RaycastHit2D rayoSuelo = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, capaSuelo);
+        Debug.DrawRay(transform.position, Vector2.down * 0.5f, Color.green);
+
         if (Input.GetKey(KeyCode.A)) 
         {
             rb.AddForce(Vector3.left * speed);
@@ -45,13 +56,15 @@ public class Player : MonoBehaviour
             animador.SetBool("caminando",true);
             sprender.flipX = false;
 
-        } else if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
-        {
-            rb.AddForce(Vector3.up * jumpSpeed);
-            animador.SetTrigger("saltando");
-
-        }else {
+        } else {
             animador.SetBool("caminando",false);
+            
+        }
+
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)) && rayoSuelo)
+        {
+            rb.AddForce(Vector2.up * jumpSpeed);
+            animador.SetTrigger("saltando");
             
         }
     }

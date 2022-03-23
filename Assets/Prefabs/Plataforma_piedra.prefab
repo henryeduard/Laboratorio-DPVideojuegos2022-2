@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7707228876838415263}
   - component: {fileID: 633382249990430236}
   - component: {fileID: 3970724399284209506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plataforma_piedra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
