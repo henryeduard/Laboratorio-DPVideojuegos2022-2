@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class MovimientoJugador : MonoBehaviour
 {
     // Variable para la velocidad de desplazamiento
     [SerializeField]
@@ -21,11 +21,17 @@ public class Player : MonoBehaviour
     // SpriteRenderer del jugador
     private SpriteRenderer sprender;
 
-    // Layer del suelo y de paredes
+    // Layer del suelo
     [SerializeField]
     private LayerMask capaSuelo;
+    
+    // Tamaño que tendra nuestro raycast
     [SerializeField]
-    private LayerMask capaPared;
+    private float longitudRayo;
+
+    // El controlador para disparar
+    [SerializeField]
+    private Transform disparador;
 
 
     // Start is called before the first frame update
@@ -41,11 +47,10 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
 
-        // Raycast para detectar el suelo
+        // Raycast para detectar el suelo y piso
         //RaycastHit2D rayoSalto = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, (1 << capaSuelo) | (1 << capaPared));
-        RaycastHit2D rayoSuelo = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, capaSuelo);
-        RaycastHit2D rayoPared = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, capaPared);
-        Debug.DrawRay(transform.position, Vector2.down * 0.5f, Color.green);
+        RaycastHit2D rayoSalto = Physics2D.Raycast(transform.position, Vector2.down, longitudRayo, capaSuelo);
+        Debug.DrawRay(transform.position, Vector2.down * longitudRayo, Color.green);
 
         if (Input.GetKey(KeyCode.A)) 
         {
@@ -53,19 +58,22 @@ public class Player : MonoBehaviour
             //rb.velocity += Vector2.left * speed;
             animador.SetBool("caminando",true);
             sprender.flipX = true;
+            disparador.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
 
         } else if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector3.right * speed);
             animador.SetBool("caminando",true);
             sprender.flipX = false;
+            disparador.eulerAngles = new Vector3(0, transform.eulerAngles.y + 360, 0);
+            
 
         } else {
             animador.SetBool("caminando",false);
             
         }
 
-        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)) && (rayoSuelo || rayoPared))
+        if ((Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W)) && rayoSalto)
         {
             rb.AddForce(Vector2.up * jumpSpeed);
             animador.SetTrigger("saltando");

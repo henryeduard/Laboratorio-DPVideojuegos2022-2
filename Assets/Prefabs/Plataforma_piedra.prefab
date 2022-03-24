@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3970724399284209506}
   m_Layer: 6
   m_Name: Plataforma_piedra
-  m_TagString: Untagged
+  m_TagString: Pared
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
