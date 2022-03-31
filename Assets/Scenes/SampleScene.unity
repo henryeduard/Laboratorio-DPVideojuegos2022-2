@@ -715,7 +715,7 @@ Transform:
   - {fileID: 1031873537}
   - {fileID: 803547995}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803547994
 GameObject:
@@ -837,10 +837,11 @@ GameObject:
   - component: {fileID: 1009069625}
   - component: {fileID: 1009069624}
   - component: {fileID: 1009069623}
+  - component: {fileID: 1009069627}
   - component: {fileID: 1009069622}
   m_Layer: 0
   m_Name: EnemigoRosalina
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -857,8 +858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d37022df6477c4b8e8e3cac7c18071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 0
-  velocidad: 0
+  vida: 1
+  velocidad: 5
 --- !u!61 &1009069623
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -943,7 +944,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5459136580217095089, guid: dc36d6eef5419d242a36117a92447798, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -963,12 +964,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009069621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.607713, y: 0.63, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalPosition: {x: 29.17, y: 1, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1009069627
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009069621}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1031873536
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8003717765093526451, guid: 3b2ad2290e5dd3f4e859f9da065bea6b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.32
+      value: 29.21
       objectReference: {fileID: 0}
     - target: {fileID: 8003717765093526451, guid: 3b2ad2290e5dd3f4e859f9da065bea6b, type: 3}
       propertyPath: m_LocalPosition.y

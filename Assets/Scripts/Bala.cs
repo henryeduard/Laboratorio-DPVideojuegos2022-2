@@ -13,6 +13,10 @@ public class Bala : MonoBehaviour
     [SerializeField]
     private float tiempoVida;
 
+    // Daño que hace la bala
+    [SerializeField]
+    private int daño;
+
 
     // Update is called once per frame
     void Update()
@@ -23,6 +27,9 @@ public class Bala : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Pared")){
+            Destroy(gameObject);
+        } else if(other.CompareTag("Enemigo")){
+            other.gameObject.GetComponent<Enemigo>().BajarVida(daño);
             Destroy(gameObject);
         }
     }
